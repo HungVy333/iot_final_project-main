@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Swallow House</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="img/12188dd0d1e72bff9df199954604a7ad.jpg" type="image/x-icon">
+    <style> #login-form button:hover {
+        background-color: rgb(0, 161, 62);
+        color:white;
+        /* Adjust text color for better visibility if needed */
+    }</style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form id="login-form">
+        <center><img id="random-image" src="" alt="Random Image" style="height: 100px; margin-top: -50px;"></center>
+        <h3>GIÁM SÁT NHÀ DẪN DỤ YẾN TẠI TÂY NINH</h3>
+        <h3><b>Đăng Nhập</b></h3>
+
+        <label for="username">Tài Khoản</label>
+        <input type="text" placeholder="Email" id="email"style="height: 50px; width: 380px;">
+
+        <label for="password">Mật Khẩu</label>
+        <input type="password" placeholder="Password" id="password" style="height: 50px; width: 380px;">
+
+        <center><button style="height: 50px; width: 400px;">Sign In</button></center>
+    </form>
+    <script>
+            // List of image URLs
+            var imageUrls = [
+              'img/1.jpg','img/5.jpg',
+              'img/3.jpg','img/10.jpg','img/8.jpg','img/6.jpg',
+              'img/4.jpg','img/white-hat-hacker-6088-1648568603.jpg',
+              // Add more image URLs as needed
+            ];
+          
+            // Function to get a random index from the array
+            function getRandomIndex(array) {
+              return Math.floor(Math.random() * array.length);
+            }
+          
+            // Function to update the image source
+            function updateImage() {
+              var randomImageUrl = imageUrls[getRandomIndex(imageUrls)];
+              document.getElementById('random-image').src = randomImageUrl;
+            }
+          
+            // Initial update
+            updateImage();
+          
+            // Set interval to update image every 5 seconds (5000 milliseconds)
+            setInterval(updateImage, 1333);
+          </script>
+    <!-- Thêm thư viện Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="/jquery-3.6.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script>
+        // Thêm sự kiện đăng nhập
+        const firebaseConfig = {
+            // Điền thông tin cấu hình của project Firebase của bạn vào đây
+            apiKey: "AIzaSyBV4K5yn5rVfvef4ZSrp6J7RMZr_rtWUiw",
+            authDomain: "dht11-9cfc9.firebaseapp.com",
+            databaseURL: "https://dht11-9cfc9-default-rtdb.firebaseio.com",
+            projectId: "dht11-9cfc9",
+            storageBucket: "dht11-9cfc9.appspot.com",
+            messagingSenderId: "840592959904",
+            appId: "1:840592959904:web:4e3e8670ec1f6db5669cc5",
+            measurementId: "G-2D916HNF5N"
+        };
+
+        // Khởi tạo Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Lấy tham chiếu tới Firebase Authentication
+        const auth = firebase.auth();
+        const loginForm = document.querySelector('#login-form');
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Lấy thông tin đăng nhập từ form
+            const email = loginForm['email'].value;
+            const password = loginForm['password'].value;
+
+            // Đăng nhập với Firebase Authentication
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Xử lý đăng nhập thành công
+                    const user = userCredential.user;
+                    console.log('Đăng nhập thành công:', user);
+                    window.location.href = 'index.html';
+                })
+                .catch((error) => {
+                    // Xử lý lỗi đăng nhập
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log('Lỗi đăng nhập:', errorMessage);
+                });
+        });
+
+    </script>
+</body>
+
+</html>

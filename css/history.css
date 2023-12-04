@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+:root {
+    --blue: #287bff;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --bg-box: #fff;
+    --bgMain:#fff;
+    --bgMainHover:#222;
+    --textcolor:#287bff;
+    --bgNavigationHover:#fff;
+    --bgNavigation: #287bff;
+    --bgdetails:#fff;
+    --textdetails:  #222;
+}
+
+:root .dark {
+    --blue: #222;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --bg-box: #2E2E2E;
+
+    --bgMain:#222;
+    --bgMainHover:#222;
+    --textcolor:#999;
+    --bgNavigationHover:#222;
+    --bgNavigation:#2E2E2E;
+    --bgdetails:#2E2E2E;
+    --textdetails: #999;
+    
+
+
+}
+.select-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+#department{
+    font-family: 'Ubuntu', sans-serif;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+#search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  #search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    flex-grow: 1;
+    margin-right: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  #search-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  #search-input::placeholder {
+    color: #848697;
+  }
+  
+  #search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #search-button:hover {
+    background-color: #0056b3;
+  }
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card1 {
+    position: relative;
+    background: var(--bg-box);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.cardBox .card2 {
+    position: relative;
+    background: var(--bg-box);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.cardBox .card3 {
+    position: relative;
+    background: var(--bg-box);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card1 .numbers1 {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: rgb(234, 234, 0);
+}
+.cardBox .card2 .numbers2 {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: rgb(221, 0, 0);
+}
+.cardBox .card3 .numbers3 {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--textcolor);
+}
+
+
+
+.cardBox .card1 .cardName1 {
+    color: var(--black2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.cardBox .card2 .cardName2 {
+    color: var(--black2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.cardBox .card3 .cardName3 {
+    color: var(--black2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.cardBox .card1 .iconBx1 {
+    font-size: 3.5em;
+    color: var(--black2);
+
+}
+.cardBox .card2 .iconBx2 {
+    font-size: 3.5em;
+    color: var(--black2);
+
+}
+.cardBox .card3 .iconBx3 {
+    font-size: 3.5em;
+    color: var(--black2);
+
+}
+
+.cardBox .card1:hover {
+    background: rgb(234, 234, 0);
+}
+.cardBox .card2:hover {
+    background: rgb(221, 0, 0);
+}
+.cardBox .card3:hover {
+    background: var(--bgNavigation);
+}
+
+.cardBox .card1:hover .numbers1,
+.cardBox .card1:hover .cardName1,
+.cardBox .card1:hover .iconBx1 {
+    color: var(--white);
+}
+.cardBox .card2:hover .numbers2,
+.cardBox .card2:hover .cardName2,
+.cardBox .card2:hover .iconBx2 {
+    color: var(--white);
+}
+.cardBox .card3:hover .numbers3,
+.cardBox .card3:hover .cardName3,
+.cardBox .card3:hover .iconBx3 {
+    color: var(--white);
+}
+
+  
